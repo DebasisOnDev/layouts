@@ -43,7 +43,7 @@ const Sidebar = () => {
         </div>
         <div className="flex flex-col gap-2 mb-2 border-b border-gray-100/20 items-center p-2 w-full">
           <Link
-            href={"#"}
+            href={"/layouts/layoutone"}
             className="w-full px-1 py-1 font-normal text-center ring-[0.25px] ring-gray-400/95 rounded-lg text-white hover:bg-gray-100/15"
           >
             <span className="text-center flex items-center justify-center">
@@ -117,7 +117,11 @@ const Sidebar = () => {
           </Link>
         </div>
       </div>
-      <ScrollArea className="flex-grow overflow-y-auto">
+      <ScrollArea
+        className={` ${
+          open ? "opacity-100 " : "opacity-0"
+        } transition-all ease-in-out flex-grow overflow-y-auto`}
+      >
         {open && (
           <div className="flex flex-col gap-2 p-2  w-full">
             <h3 className="text-sm text-gray-100/50 px-2 py-1 text-left w-full">
